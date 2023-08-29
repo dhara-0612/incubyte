@@ -57,7 +57,7 @@ class Chandrayaan_3:
         # if the current direction is Up or Down then retrieve the last direction
         # inserted (North, South, East or West)
         # from the dir_list to determine in which direction to move
-        if self.direction == "U" or "D":
+        if self.direction == "U" or self.direction == "D":
             self.direction = dir_list[-1]
             current_index = directions.index(self.direction)
             new_index = (current_index + 1) % len(directions)
@@ -77,7 +77,7 @@ class Chandrayaan_3:
         # if the current direction is Up or Down then retrieve the last direction
         # inserted (North, South, East or West)
         # from the dir_list to determine in which direction to move
-        if self.direction == "U" or "D":
+        if self.direction == "U" or self.direction == "D":
             self.direction = dir_list[-1]
             current_index = directions.index(self.direction)
             new_index = (current_index + 1) % len(directions)
@@ -100,27 +100,29 @@ class Chandrayaan_3:
         direction = "D"
         self.direction = direction
 
-# Create the spacecraft object with initial position and direction
-craft = Chandrayaan_3(0, 0, 0, "N")
 
-# Example commands
-commands = ["f", "r", "u", "b", "l"]
+if __name__ == "__main__":
+    # Create the spacecraft object with initial position and direction
+    craft = Chandrayaan_3(0, 0, 0, "N")
 
-# Execute commands
-for cmd in commands:
-    if cmd == "f":
-        craft.move_forward()
-    elif cmd == "b":
-        craft.move_backward()
-    elif cmd == "r":
-        craft.turn_right()
-    elif cmd == "l":
-        craft.turn_left()
-    elif cmd == "u":
-        craft.turn_up()
-    elif cmd == "d":
-        craft.turn_down()
+    # Example commands
+    commands = ["f", "r", "u", "b", "l"]
 
-# Display final position and direction
-print("Final Position:", craft.position)
-print("Final Direction:", craft.direction)
+    # Execute commands
+    for cmd in commands:
+        if cmd == "f":
+            craft.move_forward()
+        elif cmd == "b":
+            craft.move_backward()
+        elif cmd == "r":
+            craft.turn_right()
+        elif cmd == "l":
+            craft.turn_left()
+        elif cmd == "u":
+            craft.turn_up()
+        elif cmd == "d":
+            craft.turn_down()
+
+    # Display final position and direction
+    print("Final Position:", craft.position)
+    print("Final Direction:", craft.direction)
