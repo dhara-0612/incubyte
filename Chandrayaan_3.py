@@ -1,9 +1,8 @@
-# Define a global list to keep track of directions
-dir_list = []
-
-
 # Define Chandrayaan 3 class
 class Chandrayaan_3:
+    
+    # Define a global list to keep track of directions
+    dir_list = []
 
     # Initialize direction and position
     def __init__(self, x, y, z, direction):
